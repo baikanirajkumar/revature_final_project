@@ -1,0 +1,8 @@
+SELECT
+    INDICATOR_ID,
+    INDICATOR_CODE,
+    INDICATOR_NAME,
+    UNIT,
+    FREQUENCY,
+    DESCRIPTION
+FROM {{ ref('stg_indicators') }}

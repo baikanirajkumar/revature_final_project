@@ -1,0 +1,12 @@
+SELECT
+    COUNTRY_ID,
+    COUNTRY_NAME,
+    ISO3,
+    CONTINENT,
+    SUB_REGION,
+    LOCAL_CURRENCY,
+    MARKET_TYPE,
+    INCOME_GROUP,
+    MEMBER_SINCE,
+    UPDATED_AT
+FROM {{ ref('stg_countries') }}

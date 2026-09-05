@@ -1,0 +1,59 @@
+version: 2
+
+models:
+
+  - name: annual_gdp_by_country
+    description: "Annual GDP values by country"
+    columns:
+      - name: COUNTRY_ID
+        tests:
+          - not_null
+
+      - name: YEAR
+        tests:
+          - not_null
+
+      - name: GDP_VALUE
+        tests:
+          - not_null
+
+  - name: gdp_growth_by_country
+    description: "Year-over-year GDP growth by country"
+    columns:
+      - name: COUNTRY_ID
+        tests:
+          - not_null
+
+      - name: YEAR
+        tests:
+          - not_null
+
+  - name: top_gdp_countries
+    description: "Top 10 countries ranked by GDP for each year"
+    columns:
+      - name: COUNTRY_ID
+        tests:
+          - not_null
+
+      - name: YEAR
+        tests:
+          - not_null
+
+      - name: GDP_RANK
+        tests:
+          - not_null
+
+  - name: gdp_by_continent
+    description: "Total GDP aggregated by continent and year"
+    columns:
+      - name: CONTINENT
+        tests:
+          - not_null
+
+      - name: YEAR
+        tests:
+          - not_null
+
+      - name: TOTAL_GDP
+        tests:
+          - not_null

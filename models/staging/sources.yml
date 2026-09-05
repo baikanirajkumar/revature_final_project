@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: gdp_raw
+    database: GDP_ANALYTICS
+    schema: RAW
+
+    tables:
+      - name: RAW_COUNTRIES
+      - name: RAW_FX_RATES
+      - name: RAW_INDICATORS
+      - name: RAW_OBSERVATIONS

@@ -1,0 +1,67 @@
+version: 2
+
+models:
+
+  - name: dim_country
+    description: "Country dimension"
+    columns:
+      - name: COUNTRY_ID
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_indicator
+    description: "GDP indicator dimension"
+    columns:
+      - name: INDICATOR_ID
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_date
+    description: "Calendar dimension"
+    columns:
+      - name: DATE_KEY
+        tests:
+          - not_null
+          - unique
+
+  - name: fact_gdp_observations
+    description: "GDP observations fact table"
+    columns:
+      - name: OBS_ID
+        tests:
+          - not_null
+          - unique
+
+      - name: COUNTRY_ID
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_country')
+                field: COUNTRY_ID
+
+      - name: INDICATOR_ID
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_indicator')
+                field: INDICATOR_ID
+
+  - name: fact_fx_rates
+    description: "Foreign exchange rates fact table"
+    columns:
+      - name: FX_ID
+        tests:
+          - not_null
+          - unique
+
+      - name: COUNTRY_ID
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_country')
+                field: COUNTRY_ID
