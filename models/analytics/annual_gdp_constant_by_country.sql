@@ -1,4 +1,3 @@
-
 SELECT
     c.COUNTRY_ID,
     c.COUNTRY_NAME,
@@ -12,4 +11,4 @@ JOIN {{ ref('dim_country') }} AS c
     ON o.COUNTRY_ID = c.COUNTRY_ID
 JOIN {{ ref('dim_indicator') }} AS i
     ON o.INDICATOR_ID = i.INDICATOR_ID
-WHERE i.INDICATOR_CODE = 'GDP_CURRENT_USD'
+WHERE i.INDICATOR_CODE = 'GDP_CONST_2015_USD'
