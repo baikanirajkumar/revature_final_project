@@ -410,7 +410,7 @@ This project demonstrates practical experience with:
 
 ## 👩‍💻 Author
 
-**Shobika Rathinam**
+**Baikani Raj Kumar**
 
 Aspiring Data Engineer with a focus on:
 
